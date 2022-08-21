@@ -22,7 +22,7 @@ const actionShape = PropTypes.shape({
 });
 
 const defaultActionsProp = {
-	left: { show: true, text: "Next", color: "green" },
+  left: { show: true, text: "Next", color: "green" },
   right: { show: true, text: "Previous", color: "red" },
   up: { show: true, text: "?", color: "orange" },
 };
@@ -155,10 +155,11 @@ export default class SwipeCards extends Component {
               useNativeDriver: true,
             });
             this.cardAnimation.start((status) => {
-              if (status.finished)
-                if (hasMovedLeft) this._goToNextCard();
-                else if (hasMovedRight) this._goToPrevCard();
-              else this._resetState();
+              if (status.finished) {
+                this._goToNextCard();
+              } else {
+                this._resetState();
+              }
 
               this.cardAnimation = null;
             });
@@ -169,10 +170,10 @@ export default class SwipeCards extends Component {
       },
     });
   }
-  
+
   _goToNextCard() {
     this._resetState();
-    
+
     currentIndex[this.guid]++;
 
     // Checks to see if last card.
@@ -301,9 +302,9 @@ export default class SwipeCards extends Component {
           opacity: this.props.smoothTransition
             ? 1
             : this.state.enter.interpolate({
-                inputRange: [0, 1],
-                outputRange: [lastOpacity, opacity],
-              }),
+              inputRange: [0, 1],
+              outputRange: [lastOpacity, opacity],
+            }),
           elevation: i * 10,
         },
         {
@@ -342,9 +343,9 @@ export default class SwipeCards extends Component {
         let opacity = this.props.smoothTransition
           ? 1
           : pan.x.interpolate({
-              inputRange: [-200, 0, 200],
-              outputRange: [0.5, 1, 0.5],
-            });
+            inputRange: [-200, 0, 200],
+            outputRange: [0.5, 1, 0.5],
+          });
 
         let animatedCardStyles = {
           //...style,
