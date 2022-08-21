@@ -290,8 +290,8 @@ export default class SwipeCards extends Component {
         this.props.stackOffsetY * cards.length - i * this.props.stackOffsetY;
       let lastOffsetY = offsetY + this.props.stackOffsetY;
 
-      let opacity = 0.25 + (0.75 / cards.length) * (i + 1);
-      let lastOpacity = 0.25 + (0.75 / cards.length) * i;
+      let opacity = 0.5 + (0.75 / cards.length) * (i + 1);
+      let lastOpacity = 0.5 + (0.75 / cards.length) * i;
 
       let scale = 0.85 + (0.15 / cards.length) * (i + 1);
       let lastScale = 0.85 + (0.15 / cards.length) * i;
