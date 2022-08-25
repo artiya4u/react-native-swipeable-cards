@@ -15,10 +15,10 @@ export const styles = StyleSheet.create({
     borderColor: "green",
     borderWidth: 2,
     position: "absolute",
-    bottom: 20,
+    top: 20,
     padding: 20,
     borderRadius: 5,
-    left: 0,
+    right: 0,
   },
 });
 
